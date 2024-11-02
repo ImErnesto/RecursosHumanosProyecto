@@ -1,0 +1,30 @@
+# Ignorar archivos y carpetas generadas automáticamente
+bin/
+obj/
+.vs/
+packages/
+*.user
+*.suo
+*.log
+
+# Ignorar configuraciones locales de Visual Studio
+*.vscode/
+
+# Ignorar archivos de compilación específicos
+*.dll
+*.exe
+*.pdb
+*.cache
+*.csproj.user
+*.csproj.DotSettings.user
+
+# Ignorar carpetas de NuGet
+*.nupkg
+*.snupkg
+
+# Incluir archivos necesarios para restaurar dependencias
+!packages.config
+!*.csproj
+!NuGet.config
+
+# Ignorar archivos de configuración específicos del sistema

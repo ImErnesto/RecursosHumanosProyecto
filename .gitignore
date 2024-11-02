@@ -27,4 +27,11 @@ packages/
 !*.csproj
 !NuGet.config
 
+# Incluir DLLs necesarias para SqlServerTypes
+!SqlServerTypes/x86/SqlServerSpatial140.dll
+!SqlServerTypes/x86/msvcr120.dll
+!SqlServerTypes/x64/SqlServerSpatial140.dll
+!SqlServerTypes/x64/msvcr120.dll
+
+
 # Ignorar archivos de configuración específicos del sistema

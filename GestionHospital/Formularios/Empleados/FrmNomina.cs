@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace GestionHospital.Formularios.Empleados
 {
+    /******/
     public partial class FrmNomina : Form
     {
         private long idEmpleado;

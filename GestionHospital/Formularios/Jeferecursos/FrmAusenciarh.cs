@@ -266,5 +266,11 @@ namespace GestionHospital.Formularios.Jeferecursos
             // Llamar al método para cargar las ausencias filtradas
             CargarAusenciasFiltradas(fechaInicio, fechaFin);
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            CargarAusencias();
+        }
     }
 }

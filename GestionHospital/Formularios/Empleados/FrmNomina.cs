@@ -158,5 +158,10 @@ namespace GestionHospital.Formularios.Empleados
                 MessageBox.Show($"Error al filtrar las nóminas: {ex.Message}");
             }
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            CargarNominaEmpleado(idEmpleado);
+        }
     }
 }

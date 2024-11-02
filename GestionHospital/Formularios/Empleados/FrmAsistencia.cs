@@ -136,5 +136,10 @@ namespace GestionHospital.Formularios.Empleados
             CargarAsistenciasConFiltro(fechaInicio, fechaFin);
             
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            CargarAsistencia();
+        }
     }
 }

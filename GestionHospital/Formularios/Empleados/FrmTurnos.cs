@@ -131,5 +131,10 @@ namespace GestionHospital.Formularios.Empleados
             // Llamar al método para cargar los turnos filtrados
             CargarTurnosFiltrados(fechaInicio, fechaFin);
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            CargarTurnosEmpleado(idEmpleado);
+        }
     }
 }

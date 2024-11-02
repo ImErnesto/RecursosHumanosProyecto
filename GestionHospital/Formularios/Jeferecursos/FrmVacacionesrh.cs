@@ -271,5 +271,11 @@ namespace GestionHospital.Formularios.Jeferecursos
             CargarVacacionesFiltradas(fechaInicio, fechaFin);
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            CargarVacacionesPendientes();
+           
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace GestionHospital.Formularios.Jeferecursos
         }
 
         private prueba8Context db = new prueba8Context();
+        private long idNominaSeleccionada;
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -173,7 +174,7 @@ namespace GestionHospital.Formularios.Jeferecursos
 
                     if (cellValue != null && cellValue != DBNull.Value)
                     {
-                        long idNominaSeleccionada = Convert.ToInt64(cellValue);
+                        idNominaSeleccionada = Convert.ToInt64(cellValue);
                         CargarEmpleadosPorNomina(idNominaSeleccionada);
                     }
                     else
@@ -221,17 +222,36 @@ namespace GestionHospital.Formularios.Jeferecursos
                 MessageBox.Show($"Error al crear el periodo de pago: {ex.Message}");
             }
         }
-        private void BuscarEmpleadoPorDUI(string dui)
+        private void BuscarEmpleadoPorCriterio(string filtro)
         {
             try
             {
-                var empleados = (from DataGridViewRow row in dataGridView2.Rows
-                                 where row.Cells["Dui"].Value?.ToString() == dui
+                // Determina si el filtro es un número
+                bool esNumero = long.TryParse(filtro, out long filtroId);
+
+                var empleados = new List<DataGridViewRow>();
+
+                // Si es un número, busca coincidencia exacta en el campo IdEmpleado
+                if (esNumero)
+                {
+                    empleados = (from DataGridViewRow row in dataGridView2.Rows
+                                 where row.Cells["IdEmpleado"].Value?.ToString() == filtro // Coincidencia exacta por ID
                                  select row).ToList();
+                }
+
+                // Si no se encontró nada con el ID o si el filtro no es numérico, realiza búsqueda parcial en otros campos
+                if (!empleados.Any())
+                {
+                    empleados = (from DataGridViewRow row in dataGridView2.Rows
+                                 where (row.Cells["Nombre"].Value?.ToString() ?? "").Contains(filtro) ||     // Búsqueda parcial por nombre
+                                       (row.Cells["Apellidos"].Value?.ToString() ?? "").Contains(filtro) ||  // Búsqueda parcial por apellido
+                                       (row.Cells["Dui"].Value?.ToString() ?? "").Contains(filtro)           // Búsqueda parcial por DUI
+                                 select row).ToList();
+                }
 
                 if (empleados.Any())
                 {
-                    // Si se encuentra el empleado, seleccionamos su fila
+                    // Si se encuentran empleados, seleccionamos sus filas
                     dataGridView2.ClearSelection();
                     foreach (var row in empleados)
                     {
@@ -241,7 +261,7 @@ namespace GestionHospital.Formularios.Jeferecursos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró ningún empleado con ese DUI.");
+                    MessageBox.Show("No se encontró ningún empleado con ese criterio de búsqueda.");
                 }
             }
             catch (Exception ex)
@@ -250,17 +270,40 @@ namespace GestionHospital.Formularios.Jeferecursos
             }
         }
 
+
+
         private void Btnbuscar_Click(object sender, EventArgs e)
         {
-            string dui = Txtempleado.Text.Trim();
+            string filtro = Txtempleado.Text.Trim();
 
-            if (!string.IsNullOrEmpty(dui))
+            if (!string.IsNullOrEmpty(filtro))
             {
-                BuscarEmpleadoPorDUI(dui);
+                BuscarEmpleadoPorCriterio(filtro);
             }
             else
             {
-                MessageBox.Show("Por favor, ingrese un número de DUI para buscar.");
+                MessageBox.Show("Por favor, ingrese un criterio de búsqueda para buscar al empleado.");
+            }
+        
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            // Limpia el campo de búsqueda
+            Txtempleado.Text = string.Empty;
+
+            // Deselecciona todas las filas del DataGridView
+            dataGridView2.ClearSelection();
+
+            // Verifica que haya una nómina seleccionada antes de cargar
+            if (idNominaSeleccionada > 0)
+            {
+                // Vuelve a cargar los empleados de la nómina seleccionada
+                CargarEmpleadosPorNomina(idNominaSeleccionada);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una nómina para cargar sus empleados.");
             }
         }
     }

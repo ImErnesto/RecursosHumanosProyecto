@@ -74,6 +74,7 @@ namespace GestionHospital.Formularios.Jefedepartamento
                     .Select(a => new
                     {
                         a.IdAsistencia,
+                        a.IdEmpleado,
                         Nombres = a.IdEmpleadoNavigation.EmpNombres,
                         Apellidos = a.IdEmpleadoNavigation.EmpApellidos,
                         Dui = a.IdEmpleadoNavigation.EmpDui,
@@ -139,6 +140,7 @@ namespace GestionHospital.Formularios.Jefedepartamento
                     .Select(a => new
                     {
                         a.IdAsistencia,
+                        a.IdEmpleado,
                         Nombres = a.IdEmpleadoNavigation.EmpNombres,
                         Apellidos = a.IdEmpleadoNavigation.EmpApellidos,
                         Dui = a.IdEmpleadoNavigation.EmpDui,
@@ -151,6 +153,44 @@ namespace GestionHospital.Formularios.Jefedepartamento
 
                 dataGridView1.DataSource = asistencias;
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            CargarAsistenciaDepartamento(idDepartamento);
+        }
+        private void FiltrarAsistencia(string filtro)
+        {
+            using (var dbContext = new prueba8Context())  // Usa tu contexto
+            {
+                var asistencias = dbContext.Asistencia
+                    .Where(a => a.IdEmpleadoNavigation.IdDepartamento == idDepartamento &&
+                                (a.IdEmpleado.ToString().Contains(filtro) ||
+                                 a.IdEmpleadoNavigation.EmpNombres.Contains(filtro) ||
+                                 a.IdEmpleadoNavigation.EmpApellidos.Contains(filtro) ||
+                                 a.IdEmpleadoNavigation.EmpDui.Contains(filtro)))
+                    .Select(a => new
+                    {
+                        a.IdAsistencia,
+                        a.IdEmpleado,
+                        Nombres = a.IdEmpleadoNavigation.EmpNombres,
+                        Apellidos = a.IdEmpleadoNavigation.EmpApellidos,
+                        Dui = a.IdEmpleadoNavigation.EmpDui,
+                        Turno = a.IdTurnoNavigation.IdTipoturnoNavigation.TipNombre,
+                        FechaDeEntrada = a.AsiEntrada,
+                        FechaDeSalida = a.AsiSalida,
+                        FechaDeAprobacion = a.AsiFechaprobacion
+                    })
+                    .ToList();
+
+                dataGridView1.DataSource = asistencias;
+            }
+        }
+
+        private void Btnbuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = Txtempleado.Text.Trim();  // Obtén el texto del TextBox
+            FiltrarAsistencia(filtro);  // Llama al método de filtrado con el texto de búsqueda
         }
     }
 }

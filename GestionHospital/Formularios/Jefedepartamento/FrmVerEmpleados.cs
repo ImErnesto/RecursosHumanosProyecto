@@ -94,5 +94,44 @@ namespace GestionHospital.Formularios.Jefedepartamento
             (panel2.Height - label1.Height) / 2
         );
         }
+        private void FiltrarEmpleados(string filtro)
+        {
+            using (var dbContext = new prueba8Context())  // Usa tu contexto
+            {
+                var empleados = dbContext.Empleado
+                    .Where(e => e.IdDepartamento == idDepartamento &&  // Filtrar por el departamento si es necesario
+                                (e.IdEmpleado.ToString().Contains(filtro) ||
+                                 e.EmpNombres.Contains(filtro) ||
+                                 e.EmpApellidos.Contains(filtro) ||
+                                 e.EmpDui.Contains(filtro)))
+                    .Select(e => new
+                    {
+                        e.IdEmpleado,
+                        Nombres = e.EmpNombres,
+                        Apellidos = e.EmpApellidos,
+                        Dui = e.EmpDui,
+                        Cargo = e.IdCargoNavigation.CarNombre,
+                        Email = e.EmpEmail,
+                        Telefono = e.EmpTelefono,
+                        Direccion = e.EmpDireccion,
+                        FechaDeNacimiento = e.EmpFechanacimiento,
+                    })
+                    .ToList();
+
+                dataGridView1.DataSource = empleados;
+            }
+        }
+
+        private void Btnbuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = Txtempleado.Text.Trim();  // Obtén el texto del TextBox
+            FiltrarEmpleados(filtro);  // Llama al método de filtrado con el texto de búsqueda
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            CargarEmpleadosDepartamento(idDepartamento);
+        }
     }
 }

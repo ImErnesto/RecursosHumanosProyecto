@@ -52,6 +52,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -234,6 +235,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(200)))));
+            this.panel3.Controls.Add(this.iconButton1);
             this.panel3.Controls.Add(this.Btnboleta);
             this.panel3.Controls.Add(this.Btnbuscar);
             this.panel3.Controls.Add(this.Txtempleado);
@@ -258,7 +260,7 @@
             this.Btnboleta.IconColor = System.Drawing.Color.White;
             this.Btnboleta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btnboleta.IconSize = 25;
-            this.Btnboleta.Location = new System.Drawing.Point(245, 769);
+            this.Btnboleta.Location = new System.Drawing.Point(241, 652);
             this.Btnboleta.Margin = new System.Windows.Forms.Padding(2);
             this.Btnboleta.Name = "Btnboleta";
             this.Btnboleta.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
@@ -280,7 +282,7 @@
             this.Btnbuscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
             this.Btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btnbuscar.IconSize = 25;
-            this.Btnbuscar.Location = new System.Drawing.Point(25, 769);
+            this.Btnbuscar.Location = new System.Drawing.Point(21, 652);
             this.Btnbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.Btnbuscar.Name = "Btnbuscar";
             this.Btnbuscar.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
@@ -296,7 +298,7 @@
             // 
             this.Txtempleado.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtempleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.Txtempleado.Location = new System.Drawing.Point(25, 720);
+            this.Txtempleado.Location = new System.Drawing.Point(21, 603);
             this.Txtempleado.Margin = new System.Windows.Forms.Padding(2);
             this.Txtempleado.Name = "Txtempleado";
             this.Txtempleado.Size = new System.Drawing.Size(188, 27);
@@ -307,7 +309,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.label9.Location = new System.Drawing.Point(21, 673);
+            this.label9.Location = new System.Drawing.Point(17, 556);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(161, 23);
@@ -397,6 +399,28 @@
             this.label1.Text = "Hospital General La Fe";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.White;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(21, 729);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(187, 57);
+            this.iconButton1.TabIndex = 25;
+            this.iconButton1.Text = "Restablecer";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // FrmNominarh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,5 +477,6 @@
         private System.Windows.Forms.TextBox Txtempleado;
         private FontAwesome.Sharp.IconButton Btnbuscar;
         private FontAwesome.Sharp.IconButton Btnboleta;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

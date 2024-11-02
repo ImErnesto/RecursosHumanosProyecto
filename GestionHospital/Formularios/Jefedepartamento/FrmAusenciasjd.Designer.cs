@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.BtnReporte = new FontAwesome.Sharp.IconButton();
             this.Btncargarfechas = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -100,7 +99,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(200)))));
-            this.panel3.Controls.Add(this.BtnReporte);
             this.panel3.Controls.Add(this.Btncargarfechas);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.dateTimePicker2);
@@ -114,27 +112,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(631, 940);
             this.panel3.TabIndex = 10;
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.BtnReporte.FlatAppearance.BorderSize = 0;
-            this.BtnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReporte.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnReporte.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
-            this.BtnReporte.IconColor = System.Drawing.Color.White;
-            this.BtnReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnReporte.IconSize = 25;
-            this.BtnReporte.Location = new System.Drawing.Point(352, 858);
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.BtnReporte.Size = new System.Drawing.Size(249, 70);
-            this.BtnReporte.TabIndex = 25;
-            this.BtnReporte.Text = "Reporte";
-            this.BtnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnReporte.UseVisualStyleBackColor = false;
-            this.BtnReporte.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnReporte_Paint);
             // 
             // Btncargarfechas
             // 
@@ -318,6 +295,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private FontAwesome.Sharp.IconButton Btncargarfechas;
-        private FontAwesome.Sharp.IconButton BtnReporte;
     }
 }

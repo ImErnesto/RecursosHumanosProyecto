@@ -171,11 +171,6 @@ namespace GestionHospital.Formularios.Jefedepartamento
             redondearEsquinas(Btncargarfechas, radioEsquinas);
         }
 
-        private void BtnReporte_Paint(object sender, PaintEventArgs e)
-        {
-            int radioEsquinas = 20;
-            redondearEsquinas(BtnReporte, radioEsquinas);
-        }
 
         private void Btncargarfechas_Click(object sender, EventArgs e)
         {

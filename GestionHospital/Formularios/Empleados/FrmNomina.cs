@@ -1,4 +1,5 @@
 ﻿using GestionHospital.BD;
+using GestionHospital.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -162,6 +163,25 @@ namespace GestionHospital.Formularios.Empleados
         private void iconButton1_Click(object sender, EventArgs e)
         {
             CargarNominaEmpleado(idEmpleado);
+        }
+
+        private void Btnboleta_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.Rows.Count > 0)
+            {
+
+                long idEmpleado = this.idEmpleado;
+
+
+                FormPersonal reporteForm = new FormPersonal(idEmpleado);
+                reporteForm.MostrarReporte();
+            }
+            else
+            {
+                MessageBox.Show("No hay nóminas para imprimir.");
+            }
+
         }
     }
 }

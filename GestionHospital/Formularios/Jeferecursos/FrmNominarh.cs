@@ -1,4 +1,5 @@
 ﻿using GestionHospital.BD;
+using GestionHospital.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -304,6 +305,20 @@ namespace GestionHospital.Formularios.Jeferecursos
             else
             {
                 MessageBox.Show("Seleccione una nómina para cargar sus empleados.");
+            }
+        }
+
+        private void Btnboleta_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                long idNominaSeleccionada = Convert.ToInt64(dataGridView1.CurrentRow.Cells["IdNomina"].Value);
+                Frmnomina reporteForm = new Frmnomina(idNominaSeleccionada);
+                reporteForm.MostrarReporte(idNominaSeleccionada);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una nómina para generar el reporte.");
             }
         }
     }

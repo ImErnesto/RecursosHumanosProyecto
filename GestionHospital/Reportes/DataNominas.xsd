@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataNominas" targetNamespace="http://tempuri.org/DataNominas.xsd" xmlns:mstns="http://tempuri.org/DataNominas.xsd" xmlns="http://tempuri.org/DataNominas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataNominas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataNominas" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataNominas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Listado_nomina" msprop:Generator_RowClassName="Listado_nominaRow" msprop:Generator_RowEvHandlerName="Listado_nominaRowChangeEventHandler" msprop:Generator_RowDeletedName="Listado_nominaRowDeleted" msprop:Generator_RowDeletingName="Listado_nominaRowDeleting" msprop:Generator_RowEvArgName="Listado_nominaRowChangeEvent" msprop:Generator_TablePropName="Listado_nomina" msprop:Generator_RowChangedName="Listado_nominaRowChanged" msprop:Generator_UserTableName="Listado_nomina" msprop:Generator_RowChangingName="Listado_nominaRowChanging" msprop:Generator_TableClassName="Listado_nominaDataTable" msprop:Generator_TableVarName="tableListado_nomina">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEmpleado" msprop:Generator_UserColumnName="IdEmpleado" msprop:Generator_ColumnPropNameInTable="IdEmpleadoColumn" msprop:Generator_ColumnPropNameInRow="IdEmpleado" msprop:Generator_ColumnVarNameInTable="columnIdEmpleado" type="xs:double" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" type="xs:string" minOccurs="0" />
+              <xs:element name="Apellidos" msprop:Generator_UserColumnName="Apellidos" msprop:Generator_ColumnPropNameInTable="ApellidosColumn" msprop:Generator_ColumnPropNameInRow="Apellidos" msprop:Generator_ColumnVarNameInTable="columnApellidos" type="xs:string" minOccurs="0" />
+              <xs:element name="Dui" msprop:Generator_UserColumnName="Dui" msprop:Generator_ColumnPropNameInTable="DuiColumn" msprop:Generator_ColumnPropNameInRow="Dui" msprop:Generator_ColumnVarNameInTable="columnDui" type="xs:string" minOccurs="0" />
+              <xs:element name="Bonificaciones" msprop:Generator_UserColumnName="Bonificaciones" msprop:Generator_ColumnPropNameInTable="BonificacionesColumn" msprop:Generator_ColumnPropNameInRow="Bonificaciones" msprop:Generator_ColumnVarNameInTable="columnBonificaciones" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Deducciones" msprop:Generator_UserColumnName="Deducciones" msprop:Generator_ColumnPropNameInTable="DeduccionesColumn" msprop:Generator_ColumnPropNameInRow="Deducciones" msprop:Generator_ColumnVarNameInTable="columnDeducciones" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SalarioNeto" msprop:Generator_UserColumnName="SalarioNeto" msprop:Generator_ColumnPropNameInTable="SalarioNetoColumn" msprop:Generator_ColumnPropNameInRow="SalarioNeto" msprop:Generator_ColumnVarNameInTable="columnSalarioNeto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

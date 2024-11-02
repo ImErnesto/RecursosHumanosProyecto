@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.Btnboleta = new FontAwesome.Sharp.IconButton();
             this.Btncargarfechas = new FontAwesome.Sharp.IconButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -41,7 +42,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -67,9 +67,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
-            this.splitContainer1.Size = new System.Drawing.Size(1443, 857);
-            this.splitContainer1.SplitterDistance = 965;
-            this.splitContainer1.SplitterWidth = 3;
+            this.splitContainer1.Size = new System.Drawing.Size(1924, 1055);
+            this.splitContainer1.SplitterDistance = 1286;
             this.splitContainer1.TabIndex = 10;
             // 
             // panel1
@@ -78,9 +77,9 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(965, 857);
+            this.panel1.Size = new System.Drawing.Size(1286, 1055);
             this.panel1.TabIndex = 0;
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
@@ -90,13 +89,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 188);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 231);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(922, 528);
+            this.dataGridView1.Size = new System.Drawing.Size(1229, 650);
             this.dataGridView1.TabIndex = 9;
             // 
             // panel3
@@ -111,10 +110,32 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(475, 857);
+            this.panel3.Size = new System.Drawing.Size(634, 1055);
             this.panel3.TabIndex = 10;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(33, 735);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(249, 70);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.Text = "Restablecer";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // Btnboleta
             // 
@@ -127,15 +148,16 @@
             this.Btnboleta.IconColor = System.Drawing.Color.White;
             this.Btnboleta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btnboleta.IconSize = 25;
-            this.Btnboleta.Location = new System.Drawing.Point(26, 683);
-            this.Btnboleta.Margin = new System.Windows.Forms.Padding(2);
+            this.Btnboleta.Location = new System.Drawing.Point(35, 841);
+            this.Btnboleta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btnboleta.Name = "Btnboleta";
-            this.Btnboleta.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.Btnboleta.Size = new System.Drawing.Size(187, 57);
+            this.Btnboleta.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.Btnboleta.Size = new System.Drawing.Size(249, 70);
             this.Btnboleta.TabIndex = 5;
             this.Btnboleta.Text = "Boleta";
             this.Btnboleta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btnboleta.UseVisualStyleBackColor = false;
+            this.Btnboleta.Click += new System.EventHandler(this.Btnboleta_Click);
             this.Btnboleta.Paint += new System.Windows.Forms.PaintEventHandler(this.Btnreporte_Paint);
             // 
             // Btncargarfechas
@@ -149,11 +171,11 @@
             this.Btncargarfechas.IconColor = System.Drawing.Color.White;
             this.Btncargarfechas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Btncargarfechas.IconSize = 25;
-            this.Btncargarfechas.Location = new System.Drawing.Point(25, 509);
-            this.Btncargarfechas.Margin = new System.Windows.Forms.Padding(2);
+            this.Btncargarfechas.Location = new System.Drawing.Point(33, 626);
+            this.Btncargarfechas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btncargarfechas.Name = "Btncargarfechas";
-            this.Btncargarfechas.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.Btncargarfechas.Size = new System.Drawing.Size(187, 57);
+            this.Btncargarfechas.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.Btncargarfechas.Size = new System.Drawing.Size(249, 70);
             this.Btncargarfechas.TabIndex = 4;
             this.Btncargarfechas.Text = "Filtrar";
             this.Btncargarfechas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -165,10 +187,10 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(25, 448);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(33, 551);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(188, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(249, 30);
             this.dateTimePicker2.TabIndex = 3;
             // 
             // label3
@@ -176,10 +198,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.label3.Location = new System.Drawing.Point(21, 397);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(28, 489);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 23);
+            this.label3.Size = new System.Drawing.Size(140, 28);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha de fin:";
             // 
@@ -187,10 +208,10 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 332);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(33, 409);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(249, 30);
             this.dateTimePicker1.TabIndex = 1;
             // 
             // label2
@@ -198,10 +219,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.label2.Location = new System.Drawing.Point(21, 283);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(28, 348);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 23);
+            this.label2.Size = new System.Drawing.Size(169, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha de inicio:";
             // 
@@ -212,19 +232,19 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1443, 119);
+            this.panel2.Size = new System.Drawing.Size(1924, 146);
             this.panel2.TabIndex = 11;
             this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionHospital.Properties.Resources.exit;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 25);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 61);
+            this.pictureBox1.Size = new System.Drawing.Size(81, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -235,44 +255,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(676, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(901, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 33);
+            this.label1.Size = new System.Drawing.Size(356, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hospital General La Fe";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(25, 597);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(187, 57);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Restablecer";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
             // FrmNomina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 857);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmNomina";
             this.Text = "FrmNomina";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

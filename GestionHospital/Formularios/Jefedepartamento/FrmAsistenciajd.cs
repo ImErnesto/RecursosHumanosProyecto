@@ -107,12 +107,7 @@ namespace GestionHospital.Formularios.Jefedepartamento
 
         }
 
-        private void BtnReporte_Paint(object sender, PaintEventArgs e)
-        {
-            int radioEsquinas = 20;
-            redondearEsquinas(BtnReporte, radioEsquinas);
-        }
-
+       
         private void Btncargarfechas_Click(object sender, EventArgs e)
         {
             DateTime fechaInicio = dateTimePicker1.Value;

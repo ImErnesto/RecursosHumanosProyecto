@@ -83,6 +83,7 @@ namespace GestionHospital.Formularios.Empleados
         {
             int radioEsquinas = 20;
             redondearEsquinas(Btncargarfechas, radioEsquinas);
+            /**/
         }
 
         private void Btnreporte_Paint(object sender, PaintEventArgs e)

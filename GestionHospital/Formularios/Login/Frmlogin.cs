@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -111,11 +112,12 @@ namespace GestionHospital.Formularios.Login
             {
                 using (var dbContext = new prueba8Context())
                 {
+                    string hashedPassword = HashPasswordSHA512(password);
                     // Validar las credenciales
                     // Validar las credenciales y cargar la navegación de Rol
                     var usuario = dbContext.Usuario
                         .Include(u => u.IdRolNavigation)  // Incluir la relación de Rol
-                        .FirstOrDefault(u => u.UsuName == username && u.UsuPassword == password);
+                        .FirstOrDefault(u => u.UsuName == username && u.UsuPassword == hashedPassword);
 
 
                     if (usuario != null)
@@ -163,6 +165,15 @@ namespace GestionHospital.Formularios.Login
         }
 
 
+        private string HashPasswordSHA512(string input)
+        {
+            using (SHA512 sha512 = SHA512.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(input);
+                byte[] hash = sha512.ComputeHash(bytes);
+                return BitConverter.ToString(hash).Replace("-", "").ToLower();
+            }
+        }
 
         //Metodos para cada dashboard
 

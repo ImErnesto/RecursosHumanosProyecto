@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNominarh));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelelementos = new System.Windows.Forms.Panel();
             this.Txtnombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -89,7 +87,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(220)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panelelementos);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -122,15 +119,6 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1229, 289);
             this.dataGridView2.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1235, 16);
-            this.label2.TabIndex = 13;
-            this.label2.Text = resources.GetString("label2.Text");
             // 
             // panelelementos
             // 
@@ -264,6 +252,7 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Paint += new System.Windows.Forms.PaintEventHandler(this.iconButton1_Paint);
             // 
             // Btnboleta
             // 
@@ -451,7 +440,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelelementos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;

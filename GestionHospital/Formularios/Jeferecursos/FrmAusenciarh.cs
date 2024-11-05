@@ -272,5 +272,76 @@ namespace GestionHospital.Formularios.Jeferecursos
 
             CargarAusencias();
         }
+
+        private void iconButton1_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+
+
+            System.Drawing.Drawing2D.GraphicsPath ruta = new System.Drawing.Drawing2D.GraphicsPath();
+            ruta.AddArc(0, 0, radioEsquinas, radioEsquinas, 180, 90);
+            ruta.AddArc(iconButton1.Width - radioEsquinas, 0, radioEsquinas, radioEsquinas, 270, 90);
+            ruta.AddArc(iconButton1.Width - radioEsquinas, iconButton1.Height - radioEsquinas, radioEsquinas, radioEsquinas, 0, 90);
+            ruta.AddArc(0, iconButton1.Height - radioEsquinas, radioEsquinas, radioEsquinas, 90, 90);
+            ruta.CloseFigure();
+
+
+            iconButton1.Region = new Region(ruta);
+        }
+
+        private void Btnbuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string criterio = this.Txtempleado.Text.Trim().ToLower(); 
+
+                using (var dbContext = new prueba8Context())
+                {
+                    var ausencias = dbContext.RegistroAusencia
+                        .Where(a =>
+                            a.IdEmpleadoNavigation.EmpNombres.ToLower().Contains(criterio) ||
+                            a.IdEmpleadoNavigation.EmpApellidos.ToLower().Contains(criterio) ||
+                            (a.IdEmpleadoNavigation.EmpNombres.ToLower() + " " + a.IdEmpleadoNavigation.EmpApellidos.ToLower()).Contains(criterio) 
+                            
+                        )
+                        .Select(a => new
+                        {
+                            a.IdRegistroausencias,
+                            a.IdEstado,
+                            NombreEmpleado = a.IdEmpleadoNavigation.EmpNombres,
+                            ApellidosEmpleado = a.IdEmpleadoNavigation.EmpApellidos,
+                            TipoAusencia = a.IdTipoausenciaNavigation.TipoNombre,
+                            Estado = a.IdEstadoNavigation.EstNombre,
+                            FechaDeSolicitud = a.RegFechasolicitud,
+                            FechaDeInicio = a.RegFechainicio,
+                            FechaDeFin = a.RegFechafin,
+                            Justificacion = a.RegJustificacion
+                        })
+                        .ToList();
+
+                    dataGridView1.DataSource = ausencias;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar las ausencias: {ex.Message}");
+            }
+        }
+
+        private void Btnbuscar_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+
+
+            System.Drawing.Drawing2D.GraphicsPath ruta = new System.Drawing.Drawing2D.GraphicsPath();
+            ruta.AddArc(0, 0, radioEsquinas, radioEsquinas, 180, 90);
+            ruta.AddArc(Btnbuscar.Width - radioEsquinas, 0, radioEsquinas, radioEsquinas, 270, 90);
+            ruta.AddArc(Btnbuscar.Width - radioEsquinas, Btnbuscar.Height - radioEsquinas, radioEsquinas, radioEsquinas, 0, 90);
+            ruta.AddArc(0, Btnbuscar.Height - radioEsquinas, radioEsquinas, radioEsquinas, 90, 90);
+            ruta.CloseFigure();
+
+
+            Btnbuscar.Region = new Region(ruta);
+        }
     }
 }

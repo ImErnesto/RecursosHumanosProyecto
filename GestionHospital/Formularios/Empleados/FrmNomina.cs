@@ -185,5 +185,12 @@ namespace GestionHospital.Formularios.Empleados
             }
 
         }
+
+        private void iconButton1_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+            redondearEsquinas(iconButton1, radioEsquinas);
+        
+        }
     }
 }

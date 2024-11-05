@@ -141,5 +141,22 @@ namespace GestionHospital.Formularios.Empleados
         {
             CargarAsistencia();
         }
+
+        private void iconButton1_Paint(object sender, PaintEventArgs e)
+        {
+
+            int radioEsquinas = 20;
+
+
+            System.Drawing.Drawing2D.GraphicsPath ruta = new System.Drawing.Drawing2D.GraphicsPath();
+            ruta.AddArc(0, 0, radioEsquinas, radioEsquinas, 180, 90);
+            ruta.AddArc(iconButton1.Width - radioEsquinas, 0, radioEsquinas, radioEsquinas, 270, 90);
+            ruta.AddArc(iconButton1.Width - radioEsquinas, iconButton1.Height - radioEsquinas, radioEsquinas, radioEsquinas, 0, 90);
+            ruta.AddArc(0, iconButton1.Height - radioEsquinas, radioEsquinas, radioEsquinas, 90, 90);
+            ruta.CloseFigure();
+
+
+            iconButton1.Region = new Region(ruta);
+        }
     }
 }

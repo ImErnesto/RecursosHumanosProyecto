@@ -136,6 +136,7 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButton1.Paint += new System.Windows.Forms.PaintEventHandler(this.iconButton1_Paint);
             // 
             // Btnboleta
             // 

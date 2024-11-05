@@ -187,5 +187,11 @@ namespace GestionHospital.Formularios.Jefedepartamento
             string filtro = Txtempleado.Text.Trim();  // Obtén el texto del TextBox
             FiltrarAsistencia(filtro);  // Llama al método de filtrado con el texto de búsqueda
         }
+
+        private void iconButton1_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+            redondearEsquinas(iconButton1, radioEsquinas);
+        }
     }
 }

@@ -321,5 +321,11 @@ namespace GestionHospital.Formularios.Jeferecursos
                 MessageBox.Show("Por favor, seleccione una nómina para generar el reporte.");
             }
         }
+
+        private void iconButton1_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+            redondearEsquinas(iconButton1, radioEsquinas);
+        }
     }
 }

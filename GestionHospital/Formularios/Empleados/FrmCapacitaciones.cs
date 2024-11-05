@@ -1,4 +1,5 @@
-﻿using GestionHospital.BD;
+﻿using FontAwesome.Sharp;
+using GestionHospital.BD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -159,6 +160,22 @@ namespace GestionHospital.Formularios.Empleados
         private void Btnrecargar_Click(object sender, EventArgs e)
         {
             CargarCapacitaciones();
+        }
+
+        private void Btnrecargar_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+
+
+            System.Drawing.Drawing2D.GraphicsPath ruta = new System.Drawing.Drawing2D.GraphicsPath();
+            ruta.AddArc(0, 0, radioEsquinas, radioEsquinas, 180, 90);
+            ruta.AddArc(Btnrecargar.Width - radioEsquinas, 0, radioEsquinas, radioEsquinas, 270, 90);
+            ruta.AddArc(Btnrecargar.Width - radioEsquinas, Btnrecargar.Height - radioEsquinas, radioEsquinas, radioEsquinas, 0, 90);
+            ruta.AddArc(0, Btnrecargar.Height - radioEsquinas, radioEsquinas, radioEsquinas, 90, 90);
+            ruta.CloseFigure();
+
+
+            Btnrecargar.Region = new Region(ruta);
         }
     }
 }

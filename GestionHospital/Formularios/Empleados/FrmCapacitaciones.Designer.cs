@@ -32,12 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Btnrecargar = new FontAwesome.Sharp.IconButton();
             this.comboCapacitacion = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btnrecargar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -103,6 +103,28 @@
             this.panel3.Size = new System.Drawing.Size(631, 940);
             this.panel3.TabIndex = 10;
             // 
+            // Btnrecargar
+            // 
+            this.Btnrecargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.Btnrecargar.FlatAppearance.BorderSize = 0;
+            this.Btnrecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnrecargar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnrecargar.ForeColor = System.Drawing.SystemColors.Control;
+            this.Btnrecargar.IconChar = FontAwesome.Sharp.IconChar.UsersViewfinder;
+            this.Btnrecargar.IconColor = System.Drawing.Color.White;
+            this.Btnrecargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btnrecargar.IconSize = 25;
+            this.Btnrecargar.Location = new System.Drawing.Point(33, 505);
+            this.Btnrecargar.Name = "Btnrecargar";
+            this.Btnrecargar.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
+            this.Btnrecargar.Size = new System.Drawing.Size(373, 70);
+            this.Btnrecargar.TabIndex = 5;
+            this.Btnrecargar.Text = "Recargar";
+            this.Btnrecargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btnrecargar.UseVisualStyleBackColor = false;
+            this.Btnrecargar.Click += new System.EventHandler(this.Btnrecargar_Click);
+            this.Btnrecargar.Paint += new System.Windows.Forms.PaintEventHandler(this.Btnrecargar_Paint);
+            // 
             // comboCapacitacion
             // 
             this.comboCapacitacion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,27 +181,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Hospital General La Fe";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Btnrecargar
-            // 
-            this.Btnrecargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.Btnrecargar.FlatAppearance.BorderSize = 0;
-            this.Btnrecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnrecargar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btnrecargar.ForeColor = System.Drawing.SystemColors.Control;
-            this.Btnrecargar.IconChar = FontAwesome.Sharp.IconChar.UsersViewfinder;
-            this.Btnrecargar.IconColor = System.Drawing.Color.White;
-            this.Btnrecargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btnrecargar.IconSize = 25;
-            this.Btnrecargar.Location = new System.Drawing.Point(33, 505);
-            this.Btnrecargar.Name = "Btnrecargar";
-            this.Btnrecargar.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.Btnrecargar.Size = new System.Drawing.Size(373, 70);
-            this.Btnrecargar.TabIndex = 5;
-            this.Btnrecargar.Text = "Recargar";
-            this.Btnrecargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btnrecargar.UseVisualStyleBackColor = false;
-            this.Btnrecargar.Click += new System.EventHandler(this.Btnrecargar_Click);
             // 
             // FrmCapacitaciones
             // 

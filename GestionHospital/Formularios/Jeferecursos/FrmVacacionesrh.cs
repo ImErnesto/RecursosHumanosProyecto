@@ -277,5 +277,75 @@ namespace GestionHospital.Formularios.Jeferecursos
             CargarVacacionesPendientes();
            
         }
+
+        private void iconButton1_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+
+
+            System.Drawing.Drawing2D.GraphicsPath ruta = new System.Drawing.Drawing2D.GraphicsPath();
+            ruta.AddArc(0, 0, radioEsquinas, radioEsquinas, 180, 90);
+            ruta.AddArc(iconButton1.Width - radioEsquinas, 0, radioEsquinas, radioEsquinas, 270, 90);
+            ruta.AddArc(iconButton1.Width - radioEsquinas, iconButton1.Height - radioEsquinas, radioEsquinas, radioEsquinas, 0, 90);
+            ruta.AddArc(0, iconButton1.Height - radioEsquinas, radioEsquinas, radioEsquinas, 90, 90);
+            ruta.CloseFigure();
+
+
+            iconButton1.Region = new Region(ruta);
+        }
+
+        private void Btnbuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string criterio = Txtempleado.Text.Trim().ToLower(); 
+
+                using (var dbContext = new prueba8Context())
+                {
+                    var vacacionesFiltradas = dbContext.Vacacion
+                        .Where(v => v.IdEstado == 2 &&
+                                    (v.IdEmpleadoNavigation.EmpNombres.ToLower().Contains(criterio) ||
+                                     v.IdEmpleadoNavigation.EmpApellidos.ToLower().Contains(criterio) ||
+                                     (v.IdEmpleadoNavigation.EmpNombres.ToLower() + " " + v.IdEmpleadoNavigation.EmpApellidos.ToLower()).Contains(criterio)))
+                        .Select(v => new
+                        {
+                            v.IdVacacion,
+                            v.IdEstado,
+                            v.IdEmpleado,
+                            v.IdEmpleadoNavigation.EmpNombres,
+                            Apellidos = v.IdEmpleadoNavigation.EmpApellidos,
+                            Estado = v.IdEstadoNavigation.EstNombre,
+                            v.VacFechasolicitud,
+                            v.VacFechainicio,
+                            v.VacFechafin,
+                            v.VacFechaprobacion
+                        })
+                        .ToList();
+
+                  
+                    dataGridView1.DataSource = vacacionesFiltradas;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar vacaciones: {ex.Message}");
+            }
+        }
+
+        private void Btnbuscar_Paint(object sender, PaintEventArgs e)
+        {
+            int radioEsquinas = 20;
+
+
+            System.Drawing.Drawing2D.GraphicsPath ruta = new System.Drawing.Drawing2D.GraphicsPath();
+            ruta.AddArc(0, 0, radioEsquinas, radioEsquinas, 180, 90);
+            ruta.AddArc(Btnbuscar.Width - radioEsquinas, 0, radioEsquinas, radioEsquinas, 270, 90);
+            ruta.AddArc(Btnbuscar.Width - radioEsquinas, Btnbuscar.Height - radioEsquinas, radioEsquinas, radioEsquinas, 0, 90);
+            ruta.AddArc(0, Btnbuscar.Height - radioEsquinas, radioEsquinas, radioEsquinas, 90, 90);
+            ruta.CloseFigure();
+
+
+            Btnbuscar.Region = new Region(ruta);
+        }
     }
 }

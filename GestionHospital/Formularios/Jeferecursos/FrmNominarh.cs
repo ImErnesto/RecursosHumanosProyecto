@@ -196,32 +196,40 @@ namespace GestionHospital.Formularios.Jeferecursos
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            try
+            if (Txtnombre.Text != "")
             {
-                using (var dbContext = new prueba8Context())
+                try
                 {
-                    // Crear un nuevo objeto de periodo de pago
-                    var nuevoPeriodo = new PeriodoPago
+                    using (var dbContext = new prueba8Context())
                     {
-                        PerNombre = Txtnombre.Text,
-                        PerInicio = fechaInicio.Value.Date,  // Obtener solo la fecha
-                        PerFin = periodoFin.Value.Date        // Obtener solo la fecha
-                    };
+                        // Crear un nuevo objeto de periodo de pago
+                        var nuevoPeriodo = new PeriodoPago
+                        {
+                            PerNombre = Txtnombre.Text,
+                            PerInicio = fechaInicio.Value.Date,  // Obtener solo la fecha
+                            PerFin = periodoFin.Value.Date        // Obtener solo la fecha
+                        };
 
-                    // Agregar el periodo de pago al contexto y guardar cambios
-                    dbContext.PeriodoPago.Add(nuevoPeriodo);
-                    dbContext.SaveChanges();
+                        // Agregar el periodo de pago al contexto y guardar cambios
+                        dbContext.PeriodoPago.Add(nuevoPeriodo);
+                        dbContext.SaveChanges();
 
-                    MessageBox.Show("Periodo de pago creado exitosamente. La nómina se generará automáticamente.");
+                        MessageBox.Show("Periodo de pago creado exitosamente. La nómina se generará automáticamente.");
 
-                    // Recargar la lista de periodos para reflejar los cambios
-                    CargarNominas();
+                        // Recargar la lista de periodos para reflejar los cambios
+                        CargarNominas();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al crear el periodo de pago: {ex.Message}");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error al crear el periodo de pago: {ex.Message}");
+                MessageBox.Show("Rellene todos los campos para ingresar un nuevo registro");
             }
+            
         }
         private void BuscarEmpleadoPorCriterio(string filtro)
         {
